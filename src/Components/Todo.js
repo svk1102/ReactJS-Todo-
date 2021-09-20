@@ -27,7 +27,7 @@ function Todo({text,todos,setTodos,todo}) {
             <Button variant="danger" className="m-4" onClick={DeleteHandler}>Remove<BsTrash></BsTrash></Button>
             <Button variant="outline-success" className="m-4" onClick={CompleteHandler}>Done<BsCheckCircle/></Button>
             </Card.Body>
-            <Card.Footer className="text-muted">2 days ago</Card.Footer>
+            <Card.Footer className="text-muted">Created At : {todo.time}</Card.Footer>
             </Card>
         </div>
     )

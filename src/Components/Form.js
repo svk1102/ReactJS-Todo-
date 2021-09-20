@@ -5,7 +5,14 @@ import {BsPlus} from 'react-icons/bs'
 
 function Form({setInputText,setTodos,inputText,todos , setCheckStatus}) {
 
-    
+    const datetime = () => {
+        var showDateTime = new Date()
+        var date = showDateTime.toDateString()
+        var time = showDateTime.getHours() + " : " + showDateTime.getMinutes() + " : " + showDateTime.getSeconds()
+        var todoCreatedAt = date +" - " + time
+        return todoCreatedAt
+    }
+
 
     const inputHandler = (event) => {
         // console.log(event.target.value)
@@ -14,7 +21,7 @@ function Form({setInputText,setTodos,inputText,todos , setCheckStatus}) {
     const submitHandler = (event) => {
         event.preventDefault()
         // console.log("Click")
-        setTodos([...todos , {id : Math.random() * 10000000000000 , text : inputText , status : false }])
+        setTodos([...todos , {id : Math.random() * 10000000000000 , text : inputText ,time : datetime() , status : false }])
         setInputText("")
     }
     const statusHandler = (event) => {
